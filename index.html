@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <div class="wrap wrap-sm">
+            <div class="header"><h1>表单验证</h1></div>
+            <div class="form">
+                <form id="signup">
+                    <div class="input-wrap">
+                        <label>姓名</label>
+                        <input
+                            data-rule="maxlength:5|minlength:2"
+                            class="input-control"
+                            type="text"
+                            name="name"
+                        />
+                        <div class="input-error name-input-error">
+                            姓名格式有误～......
+                        </div>
+                    </div>
+
+                    <div class="input-wrap">
+                        <label>用户名</label>
+                        <input
+                            data-rule="pattern:&quot;^[a-zA-Z0-9]*$&quot;|maxlength:18|minlength:4"
+                            class="input-control"
+                            type="text"
+                            name="username"
+                        />
+                        <div class="input-error username-input-error">
+                            用户名格式有误～......
+                        </div>
+                    </div>
+
+                    <div class="input-wrap">
+                        <label>密码</label>
+                        <input
+                            data-rule="maxlength:64|minlength:6"
+                            class="input-control"
+                            type="password"
+                            name="password"
+                        />
+                        <div class="input-error password-input-error">
+                            密码格式有误～......
+                        </div>
+                    </div>
+
+                    <div class="input-wrap">
+                        <label>年龄</label>
+                        <input
+                            data-rule="max:88|min:18"
+                            class="input-control"
+                            type="text"
+                            name="age"
+                        />
+                        <div class="input-error age-input-error">
+                            年龄格式有误～......
+                        </div>
+                    </div>
+
+                    <div class="input-wrap">
+                        <label>自我介绍</label>
+                        <input
+                            data-rule="required:false|maxlength:1024"
+                            class="input-control"
+                            type="text"
+                            name="intro"
+                        />
+                        <div class="input-error intro-input-error">
+                            自我介绍格式有误～......
+                        </div>
+                    </div>
+
+                    <button class="button-control" type="submit">提交</button>
+                </form>
+            </div>
+        </div>
+        <!----------- 脚本区 ----------->
+        <script src="./js/jQuery-v3.3.1/jquery.js"></script>
+        <script src="./js/validator.js"></script>
+        <script src="./js/input.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>

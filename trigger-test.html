@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>菜鸟教程(runoob.com)</title>
+    </head>
+    <body>
+        <input type="text" placeholder="点击按钮文字会改变" /> <br /><br />
+        <button>触发输入框的select事件</button>
+
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $('input').on('select', function() {
+                    $('input').val('文本已选中啦啦啦');
+                });
+                $('button').on('click', function() {
+                    $('input').trigger('select');
+                });
+            });
+
+            console.log('一个空格布尔值:', Boolean(' '));
+        </script>
+    </body>
+</html>

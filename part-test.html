@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script src="./js/jQuery-v3.3.1/jquery.js"></script>
+    </head>
+    <body>
+        <h1>你好嘛</h1>
+        <script>
+            /*
+            var a = {
+                min: 18,
+                eat: function() {
+                    console.log('吃');
+                }
+            };
+            var b = {
+                'min': 18,
+                'eat': function() {
+                    console.log('吃');
+                }
+            };
+            console.log(a);
+            console.log(b);
+            */
+
+            /*
+            var obj = JSON.parse(
+                '{ "name":"runoob", "alexa":10000, "site":"www.runoob.com" }'
+            );
+            console.log('obj :', obj);
+
+            console.log('""');
+            */
+
+            var rule = { required: true };
+            var str =
+                'pattern:"^[a-z0-9]*$"|maxlength:18|minlength:4|required:false';
+            arr = str.split('|');
+            // console.log('arr :', arr);
+            for (var i = 0; i < arr.length; i++) {
+                var item_str = arr[i];
+                // console.log('item_str :', item_str);
+                var item_arr = item_str.split(':');
+                // console.log('item_arr :', item_arr);
+                rule[item_arr[0]] = JSON.parse(item_arr[1]);
+                // rule[item_arr[0]] = item_arr[1];
+            }
+            console.log('rule:', rule);
+            console.log('typeof rule:', typeof rule);
+
+            // var Func = function(name, age) {
+            //     'use strict';
+            //     this.name = name;
+            //     this.age = age;
+            //     this.eat = function() {
+            //         console.log('吃');
+            //     };
+            //     console.log(this);
+            // };
+            // var whh = new Func('whh', 18);
+            // console.log(whh);
+
+            // var re1 = new RegExp('\\w+', 'i');
+            // var re2 = new RegExp(/\w+/, 'i');
+            // var re3 = /\w+/i;
+
+            /* var person = {
+                fname: '花花',
+                lname: '王',
+                fullname: function() {
+                    console.log(this);
+                    son();
+                    function son() {
+                        return this.lname + this.fname;
+                    }
+                }
+            };
+
+            console.log(person.fullname()); */
+
+            /* 'use strict';
+
+            var Person = function(name, age) {
+                this.name = name;
+                this.age = age;
+                var me = this;
+                function init() {
+                    me.eat = function() {
+                        console.log(this);
+                        console.log('吃' + me.name + me.age);
+                    };
+                }
+                init();
+            }; */
+
+            /*
+            //构造函数
+            function Person(name, age) {
+                this.name = name;
+                this.age = age;
+                this.eat = function() {
+                    console.log(this);
+                    console.log('吃' + this.name + this.age);
+                };
+            }
+            */
+
+            /* var whh = new Person('whh', 18);
+            console.log(whh);
+            whh.eat(); */
+            var a = $('h1');
+            console.log(a);
+            console.log(typeof a);
+            console.log(a.text());
+            console.log(a.html());
+
+            // console.log('张晋华'.length);
+        </script>
+    </body>
+</html>
+
+<!-- 'pattern:"^[a-z0-9]*$"|maxlength:18|minlength:4' -->
